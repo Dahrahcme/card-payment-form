@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+/* Card form */
+
+.container form {
+  max-width: 45rem;
+  padding: 11rem 1rem 1rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container form .user-input {
+  margin: 1.25rem;
+}
+
+.container form .user-input input,
+.container form .user-input select {
+  margin-top: 0.7rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem; 
+  border: 1px solid rgb(197, 182, 182);
+}
+
+#card-number1,
+#card-number2,
+#card-number3 {
+  width: 6rem;
+  margin-right: 0.8rem;
+  padding-left: 1rem;
+}
+
+#card-number4,
+.cvv,
+select {
+  width: 6rem;
+  padding-left: 1rem;
+}
+
+.card-holder {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 100%;
+  background-color: #273485;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 25px;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: white;
+  color: #273485;
+}
+
+/* Card Display */
+
+.container .card-display {
+  position: relative;
+  margin: 2rem 0 -10rem 0;
+  height: 16.25rem;
+  width: 27.5rem;
+}
+
+.container .card-display .front {
+  padding: 1.5rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  background: coral;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.5s ease-out;
+}
+
+.container .card-display .front .image {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.container .card-display .front .image img {
+  width: 3.5rem;
+}
+
+.container .card-display .front .flex {
+  margin-top: 2rem;
+}
+
+.container .card-display .front .flex .header {
+  margin-bottom: 1rem;
+}
+
+.container .card-display .back {
+  padding: 1.5rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background: coral;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  transform: perspective(1000px) rotateY(180deg);
+  transition: transform 0.5s ease-out;
+}
+
+.container .card-display .back .stripe {
+  background-color: #000;
+  width: 112.5%;
+  margin-left: -25px;
+  height: 50px;
+}
+
+.container .card-display .back .box {
+  padding: 0 20px;
+}
+
+/* .container .card-display .back .box span {
+  color: #fff;
+  font-size: 15px;
+} */
+
+.container .card-display .back .box .cvv-box {
+  height: 50px;
+  padding: 10px;
+  margin-top: 1.5rem;
+  color: #333;
+  background: #fff;
+  width: 110%;
+  margin-left: -20px;
+  border-radius: 5px;
+}
+
+#card-number-display {
+  font-size: 25px;
+  padding: 0 30px;
+  text-align: center;
+  height: 2.57557rem;
+}
+
+/* Add this CSS to your stylesheet */
+.logo {
+  display: none; /* Hide all logos by default */
+}
+
+.logo.active {
+  display: block; /* Display the active logo */
+}
+
+
+/* .container .card-display .back .box img {
+  margin-top: ;
+} */

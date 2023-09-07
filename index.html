@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Card Payment Page</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="card-display">
+        <div class="front">
+          <div class="image">
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/9334/9334627.png"
+              alt="a chip image"
+            />
+            <img
+              id="visa-logo"
+              src="https://cdn-icons-png.flaticon.com/128/196/196578.png"
+              alt="Visa Logo"
+              class="logo"
+            />
+            <img
+              id="mastercard-logo"
+              src="https://cdn-icons-png.flaticon.com/128/11378/11378185.png"
+              alt="MasterCard Logo"
+              class="logo"
+            />
+            <img
+              id="amex-logo"
+              src="https://cdn-icons-png.flaticon.com/128/196/196539.png"
+              alt="American Express Logo"
+              class="logo"
+            />
+          </div>
+          <!-- <div id="display-area">##############</div> -->
+          <div id="card-number-display"></div>
+          <div class="flex">
+            <div class="card-name">
+              <p class="header">card holder</p>
+              <p id="card-holder-name"></p>
+            </div>
+            <div class="expiration">
+              <p class="header">expires</p>
+              <p><span id="month"></span>/<span id="year"></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <div class="stripe"></div>
+          <div class="box">
+            <div class="cvv-box"></div>
+          </div>
+        </div>
+      </div>
+      <form action="post">
+        <div class="user-input">
+          <label>card number</label> <br />
+          <input
+            type="text"
+            id="card-number1"
+            class="card-number"
+            maxlength="4"
+            required
+            on
+            onkeypress="return event.keyCode >= 48 && event.keyCode <= 57"
+          />
+          <input
+            type="text"
+            id="card-number2"
+            class="card-number"
+            maxlength="4"
+            required
+            onkeypress="return event.keyCode >= 48 && event.keyCode <= 57"
+          />
+          <input
+            type="text"
+            id="card-number3"
+            class="card-number"
+            maxlength="4"
+            required
+            onkeypress="return event.keyCode >= 48 && event.keyCode <= 57"
+          />
+          <input
+            type="text"
+            id="card-number4"
+            class="card-number"
+            maxlength="4"
+            required
+            onkeypress="return event.keyCode >= 48 && event.keyCode <= 57"
+          />
+        </div>
+        <div class="user-input">
+          <label>card holder</label> <br />
+          <input
+            type="text"
+            class="card-holder"
+            placeholder="Firstname Middlename Lastname"
+            maxlength="40"
+            required
+            onkeypress="return event.keyCode >= 65 || event.keyCode <= 90"
+          />
+        </div>
+        <div class="flex">
+          <div class="user-input">
+            <label>expiration date</label> <br />
+            <select
+              name="month"
+              id="expiration-month"
+              class="expirationMonth"
+              required
+            >
+              <option value="month" selected disabled></option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <select
+              name="year"
+              id="expiration-year"
+              class="expirationYear"
+              required
+            >
+              <option value="year" selected disabled></option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+            </select>
+          </div>
+          <div class="user-input">
+            <label>cvv</label> <br />
+            <input
+              type="text"
+              class="cvv"
+              minlength="3"
+              maxlength="4"
+              required
+            />
+          </div>
+        </div>
+        <div class="user-input">
+          <button>submit</button>
+        </div>
+        <div class="validation-message" id="validation-message"></div>
+      </form>
+    </main>
+    <script src="./script.js"></script>
+
+  </body>
+</html>
